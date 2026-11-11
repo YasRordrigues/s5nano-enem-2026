@@ -16,7 +16,19 @@ A Maritaca AI abriu os pesos do S5-nano (cerca de 4B de parâmetros, Apache 2.0)
 
 ## Resultados
 
-Em breve.
+![Resultado](card_s5nano_enem2026.png)
+
+Modo Instruct, 1 rodada, GPU L4 no Colab (bf16), cerca de 19 s por questão.
+
+| | Acertos |
+|---|---|
+| **Total** | **61/90 (67,8%)** |
+| Linguagens | 28/45 |
+| Ciências Humanas | 33/45 |
+
+- Em 5 questões (07, 21, 70, 72 e 74) o modelo estourou o limite de 1024 tokens antes de escrever a resposta; elas contam como erro.
+- O OCR achou o cabeçalho de 84 das 90 questões; nas outras 6 o modelo recebeu as páginas vizinhas e teve que achar a questão sozinho (acertou 4 delas).
+- Para comparar: o model card da Maritaca reporta 78,57% no modo Instruct no ENEM-VL, com outras provas e outro formato.
 
 ## Limitações
 
@@ -26,10 +38,10 @@ Em breve.
 
 ## Rodar
 
-Abra o notebook no Colab com GPU T4 e execute as células. O notebook baixa o caderno azul publicado pelo Diário do Nordeste.
+Abra o notebook no Colab com GPU (T4 ou L4) e execute as células. O notebook baixa o caderno azul publicado pelo Diário do Nordeste, a partir de uma cópia idêntica hospedada pelo FII Brasil (o link do Diário do Nordeste recusa downloads vindos do Colab).
 
 ## Créditos
 
 - [maritaca-ai/S5-nano](https://huggingface.co/maritaca-ai/S5-nano)
-- Caderno azul: [Diário do Nordeste](https://diariodonordeste.verdesmares.com.br/ceara/enem-2026-baixe-caderno-completo-e-veja-todas-as-questoes-do-1-dia-1.3804325). Prova: INEP.
+- Caderno azul: [Diário do Nordeste](https://diariodonordeste.verdesmares.com.br/ceara/enem-2026-baixe-caderno-completo-e-veja-todas-as-questoes-do-1-dia-1.3804325). , cópia em [FII Brasil](https://fiibrasil.com/noticia/gabarito-enem-2026-extraoficial-primeiro-dia-cores-provas/). Prova: INEP.
 - Gabarito extraoficial: [Plataforma Assaad](https://plataformaassaad.com.br/gabarito-enem-2026/)
