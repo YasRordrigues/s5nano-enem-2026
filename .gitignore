@@ -1,4 +1,4 @@
 resultado_*.json
 paginas/
-*.pdf
+/*.pdf
 .ipynb_checkpoints/
