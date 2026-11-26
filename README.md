@@ -18,6 +18,8 @@ A Maritaca AI abriu os pesos do S5-nano (cerca de 4B de parâmetros, Apache 2.0)
 
 ## Resultados
 
+![Resultado dos dois dias](card_s5nano_enem2026_total.png)
+
 Modo Instruct, 1 rodada por dia, GPU L4 no Colab (bf16), gabarito oficial do INEP.
 
 | | Acertos |
